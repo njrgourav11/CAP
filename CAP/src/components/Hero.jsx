@@ -33,10 +33,7 @@ const Hero = () => {
       </div>
 
       <div className={`flex-1 flex flex-col items-center ${styles.flexCenter} md:my-0 my-10 relative`}>
-        <img src={cap} alt="cap" className="w-[100%] h-[100%] relative z-[5]" />
-        <h2 className="text-white font-poppins font-semibold mt-4 relative z-[5]">
-          Women Safety Wing, Telangana Police
-        </h2>
+        <img src={cap} alt="cap" className="w-[200%] h-[200%] relative z-[5]" />
         {/* gradient start */}
         <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient" />
         <div className="absolute z-[1] w-[80%] h-[80%] rounded-full white__gradient bottom-40" />
