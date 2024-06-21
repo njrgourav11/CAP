@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import styles from "./style";
-import { Billing, Phases, Contact, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Testimonials, Hero, About } from "./components";
+import { Billing, Contact, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Testimonials, Hero, About } from "./components";
 
 const App = () => (
   <Router>
@@ -18,7 +18,6 @@ const App = () => (
               <>
                 <Hero />
                 <Stats />
-                <Phases />
                 <Business />
                 <Billing />
                 <CardDeal />

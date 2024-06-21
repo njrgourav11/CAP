@@ -1,6 +1,13 @@
 import { people01, ok, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
 import right from "./right.png";
 import left from "./left.png";
+import one from "./1.png";
+import two from "./2.png";
+import three from "./3.png";
+import cdac from "./cdac.png";
+import sls from "./sls.png";
+import ll from "./ll.png";
+import isac from "./isac.png";
 export const navLinks = [
   {
     id: "/",
@@ -15,8 +22,12 @@ export const navLinks = [
     title: "Services",
   },
   {
+    id: "gallery",
+    title: "Gallery",
+  },
+  {
     id: "contact",
-    title: "Contacts",
+    title: "Contact",
   },
 ];
 
@@ -138,25 +149,25 @@ export const phases = [
     id: "phase-1",
     content:
       "CAP Phase I initiated the establishment of the 'Safety Club' and extended the Women Safety Wing (WSW)'s volunteering program to select government schools and teachers in Telangana State. This phase was branded as 'Cyber Congress', aimed at empowering teachers and students to become ambassadors of cyber safety. It laid the foundational groundwork for promoting online safety awareness among students and the community.",
-    name: "District Officer",
-    title: "Education Department, Telangana",
-    img: people01,
+    name: "PHASE-1",
+    title: "CAP",
+    img: one,
   },
   {
     id: "phase-2",
     content:
-      "Our students are now more confident and knowledgeable about cyber threats and how to stay safe online.",
-    name: "School Principal",
-    title: "Government School",
-    img: people02,
+      "This phase of Cyber Ambassador Platform (CAP), a collaboration of Women Safety wing along with Education Department will train 9424 Cyber Ambassadors from 2381 schools, from 33 districts of Telangana which includes: Govt. schools – 1603 schools, BC Welfare Schools – 259 schools , SC Welfare Schools – 237 schools , ST Welfare Schools – 78 schools , Minority Welfare Schools – 204 schools were a trained on Cyber Awareness this year.",
+    name: "PHASE-2",
+    title: "CAP",
+    img: two,
   },
   {
     id: "phase-3",
     content:
-      "The initiative has created a ripple effect, with students teaching their peers and communities about digital safety.",
-    name: "Mentor Teacher",
-    title: "Cyber Ambassador Program",
-    img: people03,
+      "After completion of CAP Phase II, it has been proposed to  train/empower 8350 Cyber Ambassadors from 2133 Govt sector schools from 33 districts of Telangana through CAP phase-III. This includes remaining 2133 of 5397 Govt. schools (All 259 BC Welfare Schools, 237 SC Welfare Schools ,78 ST Welfare Schools, and 169 out of 204 Minority Welfare Schools were already trained in CAP phase II).This phase of CAP training is facilitated in 2133 Govt schools for 8350 students from across 33 districts of Telangana state on digital mode through an app-based platform.",
+    name: "PHASE-3",
+    title: "CAP",
+    img: three,
   },
 ];
 export const stats = [
@@ -259,28 +270,23 @@ export const socialMedia = [
     icon: twitter,
     link: "https://twitter.com/ts_womensafety",
   },
-  {
-    id: "social-media-4",
-    icon: linkedin,
-    link: "https://www.linkedin.com/",
-  },
 ];
 
 export const clients = [
   {
     id: "client-1",
-    logo: airbnb,
+    logo: cdac,
   },
   {
     id: "client-2",
-    logo: binance,
+    logo: isac,
   },
   {
     id: "client-3",
-    logo: coinbase,
+    logo: ll,
   },
   {
     id: "client-4",
-    logo: dropbox,
+    logo: sls,
   },
 ];

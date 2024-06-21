@@ -1,7 +1,6 @@
 import styles from "../style";
-import { discount, robot } from "../assets";
+import { discount, cap } from "../assets";
 import GetStarted from "./GetStarted";
-
 const Hero = () => {
   return (
     <section id="home" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
@@ -29,13 +28,15 @@ const Hero = () => {
           Platform.
         </h1>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        A unique initiative to create a safe cyberspace for adoloscent children in rural and urban areas of Telangana.
+          A unique initiative to create a safe cyberspace for adolescent children in rural and urban areas of Telangana.
         </p>
       </div>
 
-      <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
-        <img src={robot} alt="billing" className="w-[100%] h-[100%] relative z-[5]" />
-
+      <div className={`flex-1 flex flex-col items-center ${styles.flexCenter} md:my-0 my-10 relative`}>
+        <img src={cap} alt="cap" className="w-[100%] h-[100%] relative z-[5]" />
+        <h2 className="text-white font-poppins font-semibold mt-4 relative z-[5]">
+          Women Safety Wing, Telangana Police
+        </h2>
         {/* gradient start */}
         <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient" />
         <div className="absolute z-[1] w-[80%] h-[80%] rounded-full white__gradient bottom-40" />
@@ -43,7 +44,7 @@ const Hero = () => {
         {/* gradient end */}
       </div>
 
-      <div className={`ss:hidden ${styles.flexCenter}`}>
+      <div className={`ss:hidden ${styles.flexCenter} flex-col`}>
         <GetStarted />
       </div>
     </section>

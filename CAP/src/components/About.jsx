@@ -1,6 +1,7 @@
 import styles from "../style";
 import { robot, telangana } from "../assets";
 import GetStarted from "./GetStarted";
+import Phases from "./phases";
 import Objectives from "./objective"; // Make sure the import path is correct
 
 const About = () => {
@@ -49,6 +50,7 @@ const About = () => {
       
       <section className="mt-10 md:mt-20 px-6 md:px-16">
         <Objectives />
+        <Phases />
       </section>
     </>
   );

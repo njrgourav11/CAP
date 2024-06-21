@@ -26,9 +26,15 @@ import people03 from "./people03.png";
 import ok from "./ok.png";
 import telangana from "./telangana.png";
 import she from "./she.png";
+import govt from "./teln.png";
+import op from "./ok.png";
+import cap from "./cap.png";
 
 export {
+  cap,
+  op,
   ok,
+  govt,
   she,
   telangana,
   airbnb,
