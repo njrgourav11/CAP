@@ -13,11 +13,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar px-6">
+    <nav className="w-full flex py-6 justify-between items-center navbar px-3">
       <div className="flex items-center space-x-4">
-      {/* <h3 className="text-white text-[25px] font-bold">
+      <h3 className="text-white text-[20px] font-bold">
         CAP
-      </h3> */}
+      </h3>
         <img src={cap} alt="Logo 1" className="w-12 h-auto" />
         <img src={telangana} alt="Logo 2" className="w-12 h-auto" />
         <img src={she} alt="Logo 2" className="w-12 h-auto" />
