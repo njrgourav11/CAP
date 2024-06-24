@@ -30,10 +30,12 @@ import govt from "./teln.png";
 import op from "./ok.png";
 import cap from "./cap.png";
 import st from "./st.png";
+import all from "./all.png";
 
 export {
   st,
   cap,
+  all,
   op,
   ok,
   govt,

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import styles from "./style";
-import { Billing, Contact, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Testimonials, Hero, About } from "./components";
+import { Billing,Team, Contact, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Testimonials, Hero, About } from "./components";
 
 const App = () => (
   <Router>
@@ -23,9 +23,17 @@ const App = () => (
                 <CardDeal />
                 <Testimonials />
                 <CTA />
+                <Team />
+
               </>
             } />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={
+              <>
+                <About />
+                <Team />
+
+              </>
+            } />
             <Route path="/services" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

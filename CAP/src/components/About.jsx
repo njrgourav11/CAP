@@ -1,5 +1,5 @@
 import styles from "../style";
-import { robot, telangana } from "../assets";
+import { all, telangana } from "../assets";
 import GetStarted from "./GetStarted";
 import Phases from "./phases";
 import Objectives from "./objective"; // Make sure the import path is correct
@@ -38,7 +38,7 @@ const About = () => {
         </div>
 
         <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
-          <img src={telangana} alt="about" className="w-[100%] h-[100%] relative z-[5]" />
+          <img src={all} alt="about" className="w-[100%] h-[100%] relative z-[5]" />
 
           {/* gradient start */}
           <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient" />

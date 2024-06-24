@@ -11,8 +11,10 @@ import Hero from "./Hero";
 import About from "./About";
 import Contact from "./Contact";
 import Phases from "./phases";
+import Team from "./team";
 
 export {
+  Team,
   Navbar,
   Billing,
   CardDeal,
