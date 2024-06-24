@@ -20,7 +20,9 @@ const Hero = () => {
             <span className="text-gradient">Cyber Ambassador</span>{" "}
           </h1>
           <div className="ss:flex hidden md:mr-4 mr-0">
+            <a href="/contact">
             <GetStarted />
+            </a>
           </div>
         </div>
 

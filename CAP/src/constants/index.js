@@ -210,10 +210,13 @@ export const footerLinks = [
       },
       {
         name: "Terms & Services",
-        link: "https://www.hoobank.com/terms-and-services/",
+        link: "/terms-and-services", // Added a valid link
       },
     ],
   },
+  // You can add more sections if needed
+];
+
   {
     title: "Community",
     links: [
@@ -252,7 +255,6 @@ export const footerLinks = [
       },
     ],
   },
-];
 
 export const socialMedia = [
   {
