@@ -18,8 +18,8 @@ export const navLinks = [
     title: "About",
   },
   {
-    id: "services",
-    title: "Services",
+    id: "team",
+    title: "Team",
   },
   {
     id: "gallery",
@@ -201,16 +201,16 @@ export const footerLinks = [
         link: "/about",
       },
       {
-        name: "Services",
-        link: "/services",
+        name: "Team",
+        link: "/team",
       },
       {
         name: "Contact",
         link: "/contact",
       },
       {
-        name: "Terms & Services",
-        link: "https://www.hoobank.com/terms-and-services/",
+        name: "WSW Website",
+        link: "https://womensafetywing.telangana.gov.in/",
       },
     ],
   },
@@ -243,12 +243,12 @@ export const footerLinks = [
     title: "Partner",
     links: [
       {
-        name: "Our Partner",
-        link: "https://www.hoobank.com/our-partner/",
+        name: "Sign Up",
+        link: "/register",
       },
       {
-        name: "Become a Partner",
-        link: "https://www.hoobank.com/become-a-partner/",
+        name: "Sign in",
+        link: "/login",
       },
     ],
   },
@@ -258,17 +258,17 @@ export const socialMedia = [
   {
     id: "social-media-1",
     icon: instagram,
-    link: "https://www.instagram.com/women_safety_wing_ts/",
+    link: "https://www.instagram.com/womensafetywing_tg/",
   },
   {
     id: "social-media-2",
     icon: facebook,
-    link: "https://www.facebook.com/tswomensafety/",
+    link: "https://www.facebook.com/tgwomensafety",
   },
   {
     id: "social-media-3",
     icon: twitter,
-    link: "https://twitter.com/ts_womensafety",
+    link: "https://x.com/tg_womensafety",
   },
 ];
 

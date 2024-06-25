@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from "../style";
 import { footerLinks, socialMedia } from "../constants";
 import { cap } from "../assets";
@@ -31,7 +32,15 @@ const Footer = () => (
                     index !== footerlink.links.length - 1 ? "mb-4" : "mb-0"
                   }`}
                 >
-                  {link.name}
+                  {link.link.startsWith('http') ? (
+                    <a href={link.link} target="_blank" rel="noopener noreferrer">
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link to={link.link}>
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
