@@ -14,7 +14,9 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar px-3">
+       <a href="/">
       <div className="flex items-center space-x-4">
+       
       <h3 className="text-white text-[20px] font-bold">
         CAP
       </h3>
@@ -22,8 +24,9 @@ const Navbar = () => {
         <img src={telangana} alt="Logo 2" className="w-12 h-auto" />
         <img src={she} alt="Logo 2" className="w-12 h-auto" />
         <img src={st} alt="Logo 3" className="w-12 h-auto" />
-      
+        
       </div>
+      </a>
       <ul className="list-none sm:flex hidden justify-end items-center flex-1 ml-6">
         {navLinks.map((nav) => (
           <li
