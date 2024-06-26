@@ -42,15 +42,13 @@ const Team = () => {
             </div>
             <div className="container flex flex-col items-center justify-center p-4 mx-auto sm:p-10">
                 <div className="flex flex-row flex-wrap-reverse justify-center mt-8">
+                    
+                   
+                    
                     <ProfileCard
                         name="Sri. Shekar Reddy"
                         role="(DSP), WSW"
                         image={Sekhar}
-                    />
-                    <ProfileCard
-                        name="Dr. Anuradha Tatta"
-                        role="WSW (CAP Project Manager)"
-                        image={Anuradha}
                     />
                     <ProfileCard
                         name="Smt. Mounika"
@@ -58,19 +56,26 @@ const Team = () => {
                         image={Mam}
                     />
                     <ProfileCard
-                        name="Smt. Rema Rajeswari"
-                        role="IPS, (DIG), WSW"
-                        image={Raj}
+                        name="Sri. Mallanna"
+                        role="(SI), WSW"
+                        image={Mallana}
+                    />
+                     <ProfileCard
+                        name="Dr. Anuradha Tatta"
+                        role="WSW (CAP Project Manager)"
+                        image={Anuradha}
                     />
                     <ProfileCard
                         name="Sri. Ashok Kumar"
                         role="(SP), WSW"
                         image={Ashok}
                     />
+                    
+                    
                     <ProfileCard
-                        name="Sri. Mallanna"
-                        role="(SI), WSW"
-                        image={Mallana}
+                        name="Smt. Lakshmi"
+                        role="(ASP), WSW"
+                        image={Lakshmi}
                     />
                     <ProfileCard
                         name="Smt. Shika Goel"
@@ -78,10 +83,11 @@ const Team = () => {
                         image={Shika}
                     />
                     <ProfileCard
-                        name="Smt. Lakshmi"
-                        role="(ASP), WSW"
-                        image={Lakshmi}
+                        name="Smt. Rema Rajeswari"
+                        role="IPS, (DIG), WSW"
+                        image={Raj}
                     />
+                    
                 </div>
             </div>
         </section>

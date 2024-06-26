@@ -3,6 +3,7 @@ import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "./firebase";
 import styles from "../../style";
+import Blog from "../../components/blog/blog";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -21,6 +22,7 @@ const Dashboard = () => {
         Welcome to your dashboard. Manage your activities and stay updated with the latest information.
       </p>
       <button className="mt-4 p-4 bg-red-600 text-white rounded-md" onClick={handleLogout}>Logout</button>
+    <Blog />
     </section>
   );
 };

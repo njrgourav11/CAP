@@ -4,6 +4,8 @@ import { Billing,Team, Contact, Business, CardDeal, CTA, Footer, Navbar, Stats, 
 import  Register from "./components/login/register";
 import  Login from "./components/login/login";
 import  Dashboard from "./components/login/dashboard";
+import  Blogs from "./components/blog/blog";
+import  Post from "./components/blog/int";
 const App = () => (
   <Router>
     <div className="bg-primary w-full overflow-hidden">
@@ -34,6 +36,8 @@ const App = () => (
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/post" element={<Post />} />
           </Routes>
         </div>
       </div>
