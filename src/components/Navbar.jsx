@@ -1,11 +1,21 @@
-import { useState } from "react";
-
-import { close, menu,telangana,cap,st, she } from "../assets";
+import { useState, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
+import { close, menu, telangana, cap, st, she } from "../assets";
 import { navLinks } from "../constants";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const currentPath =
+      location.pathname === "/"
+        ? "Home"
+        : location.pathname.substring(1).charAt(0).toUpperCase() +
+          location.pathname.slice(2);
+    setActive(currentPath);
+  }, [location]);
 
   const handleNavItemClick = (title) => {
     setActive(title);
@@ -14,18 +24,14 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar px-3">
-       <a href="/">
-      <div className="flex items-center space-x-4">
-       
-      <h3 className="text-white text-[20px] font-bold">
-        CAP
-      </h3>
-        <img src={cap} alt="Logo 1" className="w-12 h-auto" />
-        <img src={telangana} alt="Logo 2" className="w-12 h-auto" />
-        <img src={she} alt="Logo 2" className="w-12 h-auto" />
-        <img src={st} alt="Logo 3" className="w-12 h-auto" />
-        
-      </div>
+      <a href="/">
+        <div className="flex items-center space-x-4">
+          <h3 className="text-white text-[20px] font-bold">CAP</h3>
+          <img src={cap} alt="Logo 1" className="w-12 h-auto" />
+          <img src={telangana} alt="Logo 2" className="w-12 h-auto" />
+          <img src={she} alt="Logo 2" className="w-12 h-auto" />
+          <img src={st} alt="Logo 3" className="w-12 h-auto" />
+        </div>
       </a>
       <ul className="list-none sm:flex hidden justify-end items-center flex-1 ml-6">
         {navLinks.map((nav) => (
@@ -33,14 +39,14 @@ const Navbar = () => {
             key={nav.id}
             className={`font-poppins font-normal cursor-pointer text-[16px] ${
               active === nav.title ? "text-white" : "text-dimWhite"
-            } ${nav.id === "home" ? "mr-10 sm:mr-0" : "mr-10"}`}
+            } mr-10`}
             onClick={() => handleNavItemClick(nav.title)}
           >
-            <a href={`${nav.id}`}>{nav.title}</a>
+            <Link to={nav.id}>{nav.title}</Link>
           </li>
         ))}
       </ul>
-       
+
       <div className="sm:hidden flex flex-1 justify-end items-center">
         <img
           src={toggle ? close : menu}
@@ -60,10 +66,10 @@ const Navbar = () => {
                 key={nav.id}
                 className={`font-poppins font-medium cursor-pointer text-[16px] ${
                   active === nav.title ? "text-white" : "text-dimWhite"
-                } ${nav.id === "Home" ? "mb-0" : "mb-4"}`}
+                } mb-4`}
                 onClick={() => handleNavItemClick(nav.title)}
               >
-                <a href={`${nav.id}`}>{nav.title}</a>
+                <Link to={nav.id}>{nav.title}</Link>
               </li>
             ))}
           </ul>
