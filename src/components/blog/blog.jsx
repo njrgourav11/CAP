@@ -1,109 +1,59 @@
-import React, { useState } from "react";
-import { firestore, storage } from "../login/firebase";
-import { collection, addDoc, Timestamp } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import React, { useEffect, useState } from 'react';
+import styles from "../../style";
+import { firestore } from "../login/firebase";
+import { telangana } from '../../assets';
+const Blogs = () => {
+  const [blogs, setBlogs] = useState([]);
 
-const BlogPostForm = ({ onNewPost }) => {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [image, setImage] = useState(null);
-  const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState("");
-
-  const handleImageChange = (e) => {
-    if (e.target.files[0]) {
-      setImage(e.target.files[0]);
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setMessage("");
-    setMessageType("");
-
-    const auth = getAuth();
-    if (!auth.currentUser) {
-      setMessage("You must be logged in to submit a blog post.");
-      setMessageType("error");
-      return;
-    }
-
-    try {
-      let imageUrl = "";
-      if (image) {
-        const imageRef = ref(storage, `images/${image.name}`);
-        await uploadBytes(imageRef, image);
-        imageUrl = await getDownloadURL(imageRef);
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const blogsCollection = await firestore.collection('blogs').get();
+        const fetchedBlogs = blogsCollection.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        setBlogs(fetchedBlogs);
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
       }
+    };
 
-      const newPost = {
-        title,
-        content,
-        imageUrl,
-        createdAt: Timestamp.fromDate(new Date()),
-        author: auth.currentUser.uid,
-      };
-
-      const docRef = await addDoc(collection(firestore, "blogs"), newPost);
-
-      setTitle("");
-      setContent("");
-      setImage(null);
-
-      setMessage("Blog post submitted successfully!");
-      setMessageType("success");
-      onNewPost({ ...newPost, id: docRef.id });
-    } catch (error) {
-      console.error("Error adding document: ", error);
-      setMessage(`Failed to submit blog post: ${error.message}`);
-      setMessageType("error");
-    }
-  };
+    fetchBlogs();
+  }, []);
 
   return (
-    <div className="p-4 max-w-lg mx-auto bg-white rounded-md shadow-md">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">Post a New Blog</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="block text-gray-600">Title:</label>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-md"
-            required
-          />
+    <section id="blogs" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
+      <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
+        <div className="flex flex-row items-center py-[6px] px-4 bg-about-gradient rounded-[10px] mb-2">
+          <img src={telangana} alt="about" className="w-[32px] h-[32px]" />
+          <p className={`${styles.paragraph} ml-2`}>
+            <span className="text-white">Blogs</span> by Cyber Ambassador Program
+          </p>
         </div>
-        <div>
-          <label className="block text-gray-600">Content:</label>
-          <textarea
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-md"
-            rows="6"
-            required
-          />
+
+        <div className="flex flex-row justify-between items-center w-full">
+          <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] text-white ss:leading-[100.8px] leading-[75px]">
+            Explore <br className="sm:block hidden" />{" "}
+            <span className="text-gradient">Blogs</span> 
+          </h1>
         </div>
-        <div>
-          <label className="block text-gray-600">Image:</label>
-          <input
-            type="file"
-            onChange={handleImageChange}
-            className="w-full p-2 border border-gray-300 rounded-md"
-          />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+          {blogs.map(blog => (
+            <div key={blog.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img src={blog.imageUrl} alt={blog.title} className="w-full h-60 object-cover object-center" />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-gray-800">{blog.title}</h3>
+                <p className="text-sm text-gray-600 mt-2">{blog.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
-        <button type="submit" className="mt-4 p-4 bg-blue-600 text-white rounded-md">Submit</button>
-      </form>
-      {message && (
-        <p
-          className={`mt-4 text-center ${messageType === "success" ? "text-green-600" : "text-red-600"}`}
-        >
-          {message}
-        </p>
-      )}
-    </div>
+      </div>
+
+      <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
+        {/* Insert any additional design elements or background images here */}
+      </div>
+    </section>
   );
 };
 
-export default BlogPostForm;
+export default Blogs;

@@ -18,4 +18,4 @@ const provider = new GoogleAuthProvider();
 const firestore = getFirestore(app);
 const storage = getStorage(app);
 
-export { auth, provider, firestore, storage, ref, uploadBytes, getDownloadURL };
+export { auth, provider, firestore, storage, ref, uploadBytes, getDownloadURL, getAuth, };
