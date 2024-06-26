@@ -209,38 +209,40 @@ export const footerLinks = [
         link: "/contact",
       },
       {
-        name: "WSW Website",
-        link: "https://womensafetywing.telangana.gov.in/",
+        name: "Blogs",
+        link: "/blogs",
       },
+      
     ],
   },
   {
     title: "Community",
     links: [
       {
-        name: "Help Center",
-        link: "https://www.hoobank.com/help-center/",
+        name: "WSW Website",
+        link: "https://womensafetywing.telangana.gov.in/",
       },
       {
-        name: "Partners",
-        link: "https://www.hoobank.com/partners/",
+        name: "Help Center- WSW",
+        link: "https://womensafetywing.telangana.gov.in/get-help-by-issue/",
       },
       {
-        name: "Suggestions",
-        link: "https://www.hoobank.com/suggestions/",
+        name: "Support Bharosa Society",
+        link: "https://womensafetywing.telangana.gov.in/support-bharosa/",
       },
       {
-        name: "Blog",
-        link: "https://www.hoobank.com/blog/",
+        name: "Telangana Police Website",
+        link: "https://www.tspolice.gov.in/",
       },
       {
-        name: "Newsletters",
-        link: "https://www.hoobank.com/newsletters/",
+        name: "Telangana State Website",
+        link: "https://www.telangana.gov.in/",
       },
+      
     ],
   },
   {
-    title: "Partner",
+    title: "Access",
     links: [
       {
         name: "Sign Up",
