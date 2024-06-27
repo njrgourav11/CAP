@@ -1,4 +1,4 @@
-import { people01, ok, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
+import {facebook, instagram, twitter, send, shield, star  } from "../assets";
 import right from "./right.png";
 import left from "./left.png";
 import one from "./1.png";
@@ -8,6 +8,7 @@ import cdac from "./cdac.png";
 import sls from "./sls.png";
 import ll from "./ll.png";
 import isac from "./isac.png";
+
 export const navLinks = [
   {
     id: "/",
@@ -105,7 +106,7 @@ export const feedback = [
       "The Cyber Ambassador Platform has transformed our understanding of online safety and empowered our students to lead the way.",
     name: "District Officer",
     title: "Education Department, Telangana",
-    img: people01,
+    //img: Shika,
   },
   {
     id: "feedback-2",
@@ -113,7 +114,7 @@ export const feedback = [
       "Our students are now more confident and knowledgeable about cyber threats and how to stay safe online.",
     name: "School Principal",
     title: "Government School",
-    img: people02,
+    //img: Raj,
   },
   {
     id: "feedback-3",
@@ -121,31 +122,31 @@ export const feedback = [
       "The initiative has created a ripple effect, with students teaching their peers and communities about digital safety.",
     name: "Mentor Teacher",
     title: "Cyber Ambassador Program",
-    img: people03,
+    //img: Ashok,
   },
   {
     id: "feedback-4",
     content:
-      "The use of interactive content like videos and infographics has made learning about cyber safety engaging for students.",
-    name: "Student Ambassador",
-    title: "Cyber Ambassador Program",
-    img: people03,
+     "The training sessions have significantly increased awareness among students about the importance of digital hygiene.",
+    name: "Teacher",
+    title: "Private School",
+    //img: Mallana,
   },
   {
     id: "feedback-5",
     content:
-      "The use of interactive content like videos and infographics has made learning about cyber safety engaging for students.",
-    name: "Student Ambassador",
-    title: "Cyber Ambassador Program",
-    img: people03,
+    "The collaboration with the Cyber Ambassador Program has made our school a safer and more informed community.",
+    name: "Headmaster",
+    title: "High School",
+    //img: Anuradha,
   },
   {
     id: "feedback-6",
     content:
-      "The use of interactive content like videos and infographics has made learning about cyber safety engaging for students.",
-    name: "Student Ambassador",
-    title: "Cyber Ambassador Program",
-    img: people03,
+    "The platform's approach to cyber safety education is practical and highly effective for young learners.",
+    name: "Coordinator",
+    title: "Community Center",
+   // img: Mam,
   },
 ];
 export const phases = [

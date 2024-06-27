@@ -8,6 +8,7 @@ import  Blogs from "./components/blog/blog";
 import  Post from "./components/blog/int";
 import  BlogDetail from "./components/blog/bloglist";
 import  Gallery from "./components/gallery";
+import PageNotFound from "./components/page";
 const App = () => (
   <Router>
     <div className="bg-primary w-full overflow-hidden">
@@ -41,6 +42,7 @@ const App = () => (
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogs/:id" component={BlogDetail} />
             <Route path="/post" element={<Post />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>
       </div>
