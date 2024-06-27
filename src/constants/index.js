@@ -178,17 +178,22 @@ export const stats = [
   {
     id: "stats-1",
     title: "Cyber Ambassadors",
-    value: "8350+",
+    value: "21175+",
   },
   {
     id: "stats-2",
-    title: "Cyber Training Sessions",
-    value: "80+",
+    title: "Mentor Teachers",
+    value: "10586+",
   },
   {
     id: "stats-3",
     title: "Government Schools",
-    value: "2133+",
+    value: "6164+",
+  },
+  {
+    id: "stats-3",
+    title: "SHE Team Officers",
+    value: "100+",
   },
 ];
 
