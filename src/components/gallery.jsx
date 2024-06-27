@@ -19,7 +19,7 @@ const Gallery = () => {
           <div className="flex flex-row justify-between items-center w-full">
             <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] text-white ss:leading-[100.8px] leading-[75px]">
               Our <br className="sm:block hidden" />{" "}
-              <span className="text-gradient">CAP</span> 
+              <span className="text-gradient">Cyber Ambassador Platform</span> 
             </h1>
           </div>
 
@@ -27,19 +27,18 @@ const Gallery = () => {
             Gallery.
           </h1>
           <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-            The Cyber Ambassador Program (CAP) is a training initiative selecting students and teachers from various schools to handle online threats and promote positive use of the internet and mobile devices.
-          </p>
+          The CAP Gallery offers a snapshot of the Cyber Ambassador Program's mission to educate students and teachers about online threats and promote positive internet usage. </p>
           <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-            In a rapidly changing world, there's a need to reorient educational and training systems to inculcate life skills, moral, and ethical values among students, making them tech-savvy instead of tech slaves.
-          </p>
+          Each image and video in the CAP Gallery tells a story of empowerment and education, showcasing the program's commitment to instilling essential life skills and ethical values.</p>
         </div>
 
         <div className="flex mt-10 justify-center">
-          <video width="650" height="auto" loop autoPlay muted className="rounded-lg border border-yellow-400 shadow-sm shadow-orange-400 mx-2 my-4 ml-20 mr-20">
-            <source src="/cap.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+  <video width="95%" height="100%" loop autoPlay muted className="rounded-lg border border-yellow-200 shadow-sm shadow-orange-400 mx-2 my-4 ml-10 mt-10 mb-10 mr-10">
+    <source src="/cap.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
       </section>
 
       <section>
