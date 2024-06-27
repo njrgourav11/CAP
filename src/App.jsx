@@ -7,6 +7,7 @@ import  Dashboard from "./components/login/dashboard";
 import  Blogs from "./components/blog/blog";
 import  Post from "./components/blog/int";
 import  BlogDetail from "./components/blog/bloglist";
+import  Gallery from "./components/gallery";
 const App = () => (
   <Router>
     <div className="bg-primary w-full overflow-hidden">
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />

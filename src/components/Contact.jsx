@@ -4,7 +4,7 @@ import { facebook, instagram, twitter, telangana } from "../assets";
 
 const Contact = () => {
   const [result, setResult] = React.useState("");
-  const [showModal, setShowModal] = React.useState(false);
+  const [showModal, setShowModal] = React.useState(false); // State for modal visibility
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -23,8 +23,8 @@ const Contact = () => {
 
       if (data.success) {
         setResult("Form Submitted Successfully");
-        setShowModal(true);
         event.target.reset();
+        setShowModal(true); // Show modal on successful form submission
       } else {
         console.log("Error", data);
         setResult(data.message || "Failed to submit form");
@@ -36,7 +36,7 @@ const Contact = () => {
   };
 
   const closeModal = () => {
-    setShowModal(false);
+    setShowModal(false); // Function to close the modal
   };
 
   return (
@@ -91,6 +91,8 @@ const Contact = () => {
 
       <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
         <form onSubmit={onSubmit} className="flex flex-col gap-4 w-full px-6">
+        <input type="hidden" name="from_name" value="Cyber Ambassador Platform"/>
+          <input type="hidden" name="subject" value="New Contact Enquiry From Cyber Ambassador Platform"/>
           <input type="text" name="name" placeholder="Name" className="p-4 rounded-md bg-white" required />
           <input type="text" name="phone" placeholder="Phone Number" className="p-4 rounded-md bg-white" required />
           <input type="email" name="email" placeholder="Email" className="p-4 rounded-md bg-white" required />
@@ -99,7 +101,7 @@ const Contact = () => {
           <button type="submit" className="mt-4 p-4 bg-blue-600 text-white rounded-md">Submit</button>
         </form>
         {showModal && (
-          <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
             <div className="bg-white p-8 rounded-md shadow-lg">
               <p className="text-green-600">{result}</p>
               <button onClick={closeModal} className="mt-4 p-2 bg-blue-600 text-white rounded-md">Close</button>
