@@ -68,26 +68,69 @@ const Login = () => {
         {success && <p className="text-green-500">{success}</p>}
       </div>
 
-      <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
-        <form className="flex flex-col gap-4 w-full px-6" onSubmit={handleLogin}>
-          <input
-            type="email"
-            placeholder="Email"
-            className="p-4 rounded-md bg-white"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            className="p-4 rounded-md bg-white"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit" className="mt-4 p-4 bg-blue-600 text-white rounded-md">Login</button>
-          <button type="button" className="mt-4 p-4 bg-red-600 text-white rounded-md" onClick={handleGoogleLogin}>Login with Google</button>
-          <button type="button" className="mt-4 p-4 bg-gray-600 text-white rounded-md" onClick={handlePasswordReset}>Reset Password</button>
-        </form>
+      <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 mr-20">
+        <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+          <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+            Sign in to your account
+          </h1>
+          <form className="space-y-4 md:space-y-6" onSubmit={handleLogin}>
+            <div>
+              <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="name@company.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="flex items-start">
+                <div className="flex items-center h-5">
+                  <input
+                    id="remember"
+                    aria-describedby="remember"
+                    type="checkbox"
+                    className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                    required
+                  />
+                </div>
+                <div className="ml-3 text-sm">
+                  <label htmlFor="remember" className="text-gray-500 dark:text-gray-300">Remember me</label>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={handlePasswordReset}
+                className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500 focus:outline-none"
+              >
+                Forgot password?
+              </button>
+            </div>
+            <button
+              type="submit"
+              className="w-full text-black bg-cyan-700 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            >
+              Sign in
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );
