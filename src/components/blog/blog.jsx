@@ -35,6 +35,19 @@ const Blogs = () => {
     fetchBlogs();
   }, []);
 
+  // Split blogs into chunks of 3 for display in rows
+  const chunkedBlogs = blogs.reduce((resultArray, item, index) => {
+    const chunkIndex = Math.floor(index / 3);
+
+    if (!resultArray[chunkIndex]) {
+      resultArray[chunkIndex] = []; // start a new chunk
+    }
+
+    resultArray[chunkIndex].push(item);
+
+    return resultArray;
+  }, []);
+
   return (
     <section id="blogs" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
       <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
@@ -47,7 +60,13 @@ const Blogs = () => {
           {loading ? (
             <p className={`${styles.paragraph} max-w-[470px] mt-5`}>Loading...</p>
           ) : (
-            blogs.map((blog) => <BlogCard key={blog.id} blog={blog} />)
+            chunkedBlogs.map((row, rowIndex) => (
+              <div key={rowIndex} className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {row.map((blog) => (
+                  <BlogCard key={blog.id} blog={blog} />
+                ))}
+              </div>
+            ))
           )}
         </div>
       </div>
