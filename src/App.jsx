@@ -6,6 +6,7 @@ import  Login from "./components/login/login";
 import  Dashboard from "./components/login/dashboard";
 import  Blogs from "./components/blog/blog";
 import  Post from "./components/blog/int";
+import  BlogDetail from "./components/blog/bloglist";
 const App = () => (
   <Router>
     <div className="bg-primary w-full overflow-hidden">
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs/:id" component={BlogDetail} />
             <Route path="/post" element={<Post />} />
           </Routes>
         </div>

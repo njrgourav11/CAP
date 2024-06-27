@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
-import { getAuth } from 'firebase/auth';
-import { getDatabase, ref, push, set } from 'firebase/database'; // Firebase Realtime Database
-import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage'; // Firebase Storage
-import styles from '../../style';
+import React, { useState } from "react";
+import { getDatabase, ref, set, push } from "firebase/database";
+import { getAuth } from "firebase/auth";
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const BlogPostForm = ({ onNewPost }) => {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   const [image, setImage] = useState(null);
-  const [message, setMessage] = useState('');
-  const [uploading, setUploading] = useState(false); // State to track upload status
+  const [message, setMessage] = useState("");
 
   const handleImageChange = (e) => {
     if (e.target.files[0]) {
@@ -19,51 +17,54 @@ const BlogPostForm = ({ onNewPost }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage('');
-    setUploading(true); // Start upload process
+    setMessage("");
 
     const auth = getAuth();
-    if (!auth.currentUser) {
-      setMessage('You must be logged in to submit a blog post.');
-      setUploading(false); // Reset upload status
+    const user = auth.currentUser;
+
+    if (!user) {
+      setMessage("You must be logged in to submit a blog post.");
       return;
     }
 
     try {
-      let imageUrl = '';
+      const db = getDatabase();
+      let imageUrl = "";
+
       if (image) {
         const storage = getStorage();
-        const storageRef2 = storageRef(storage, `images/${image.name}`);
-        await uploadBytes(storageRef2, image);
-        imageUrl = await getDownloadURL(storageRef2);
+        const imageRef = storageRef(storage, `images/${image.name}`);
+        await uploadBytes(imageRef, image);
+        imageUrl = await getDownloadURL(imageRef);
       }
 
-      const db = getDatabase();
-      const newPostRef = push(ref(db, 'posts')); // Push a new post under 'posts'
-      await set(newPostRef, {
+      const newPostRef = push(ref(db, "blogs"));
+      const newPost = {
         title,
         content,
         imageUrl,
         createdAt: new Date().toISOString(),
-        author: auth.currentUser.uid,
-      });
+        author: user.uid,
+      };
 
-      setTitle('');
-      setContent('');
+      await set(newPostRef, newPost);
+
+      setTitle("");
+      setContent("");
       setImage(null);
-      setUploading(false); // Reset upload status
 
-      setMessage('Blog post submitted successfully!');
-      onNewPost(); // Notify parent component or update state with new post
+      setMessage("Blog post submitted successfully!");
+      if (onNewPost) {
+        onNewPost({ ...newPost, id: newPostRef.key });
+      }
     } catch (error) {
-      console.error('Error submitting blog post:', error);
+      console.error("Error adding document: ", error);
       setMessage(`Failed to submit blog post: ${error.message}`);
-      setUploading(false); // Reset upload status
     }
   };
 
   return (
-    <div className={`p-4 max-w-lg mx-auto bg-white rounded-md shadow-md ${styles.paddingY}`}>
+    <div className="p-4 max-w-lg mx-auto bg-white rounded-md shadow-md">
       <h2 className="text-2xl font-semibold text-gray-800 mb-4">Post a New Blog</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -94,19 +95,9 @@ const BlogPostForm = ({ onNewPost }) => {
             className="w-full p-2 border border-gray-300 rounded-md"
           />
         </div>
-        <button type="submit" className="mt-4 p-4 bg-blue-600 text-white rounded-md" disabled={uploading}>
-          {uploading ? 'Uploading...' : 'Submit'}
-        </button>
+        <button type="submit" className="mt-4 p-4 bg-blue-600 text-white rounded-md">Submit</button>
       </form>
-      {message && (
-        <p
-          className={`mt-4 text-center text-gray-800 ${
-            message.includes('Failed') ? 'text-red-600' : 'text-green-600'
-          }`}
-        >
-          {message}
-        </p>
-      )}
+      {message && <p className="mt-4 text-center text-gray-800">{message}</p>}
     </div>
   );
 };

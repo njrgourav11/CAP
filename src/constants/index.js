@@ -174,7 +174,7 @@ export const stats = [
   {
     id: "stats-1",
     title: "Cyber Ambassadors",
-    value: "9424+",
+    value: "8350+",
   },
   {
     id: "stats-2",
@@ -184,7 +184,7 @@ export const stats = [
   {
     id: "stats-3",
     title: "Government Schools",
-    value: "2381+",
+    value: "2133+",
   },
 ];
 
