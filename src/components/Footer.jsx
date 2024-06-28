@@ -11,11 +11,8 @@ const Footer = () => (
         <img
           src={cap}
           alt="cap"
-          className="w-[290px] h-[342px] object-contain"
+          className="mt-0 w-[95%] h-[100%] object-contain"
         />
-        {/* <p className="font-poppins font-normal text-[18px] leading-[27px] text-white mt-4 text-center md:text-left">
-          Women Safety Wing, Telangana Police
-        </p> */}
       </div>
 
       <div className="flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10">
@@ -50,7 +47,7 @@ const Footer = () => (
     </div>
 
     <div className="w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]">
-      <p className="font-poppins font-normal text-center text-[18px] leading-[27px] text-white">
+      <p className="font-poppins font-normal text-center text-[15px] leading-[20px] text-white">
         Copyright Ⓒ 2024 Campus Ambassador Platform. All Rights Reserved. <br />
         <a href="https://www.linkedin.com/in/bgourav2287/" target="_blank" rel="noopener noreferrer">
           Designed and maintained by <u>Gourav</u>.
