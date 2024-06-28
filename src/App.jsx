@@ -6,7 +6,7 @@ import  Login from "./components/login/login";
 import  Dashboard from "./components/login/dashboard";
 import  Post from "./components/blog/int";
 import Blogs from './components/blog/blog';
-import BlogDetail from './components/blog/Blogdetail';
+import BlogDetail from './components/blog/blogdetail';
 import  Gallery from "./components/gallery";
 import PageNotFound from "./components/page";
 const App = () => (
