@@ -1,6 +1,5 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }, // Rewrite to handle all routes
-    { "source": "/blogs/:id", "destination": "/blogs/:id" } // Rewrite specific to blog detail route
-  ]
-}
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/" }
+    ]
+  }
