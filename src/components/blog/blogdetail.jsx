@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { getDatabase, ref, onValue } from 'firebase/database';
 
 const BlogDetail = () => {
+
+    console.log('BlogDetail component rendered');
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);

@@ -4,12 +4,13 @@ import { Billing,Team, Contact, Business, CardDeal, CTA, Footer, Navbar, Stats, 
 import  Register from "./components/login/register";
 import  Login from "./components/login/login";
 import  Dashboard from "./components/login/dashboard";
-import  Blogs from "./components/blog/blog";
 import  Post from "./components/blog/int";
-import  BlogDetail from "./components/blog/bloglist";
+import Blogs from './components/blog/blog';
+import BlogDetail from './components/blog/BlogDetail';
 import  Gallery from "./components/gallery";
 import PageNotFound from "./components/page";
 const App = () => (
+
   <Router>
     <div className="bg-primary w-full overflow-hidden">
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
@@ -40,7 +41,7 @@ const App = () => (
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/blogs" element={<Blogs />} />
-            <Route path="/blogs/:id" component={BlogDetail} />
+            <Route path="/blogs/:id" element={<BlogDetail />} />
             <Route path="/post" element={<Post />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
