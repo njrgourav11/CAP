@@ -255,10 +255,6 @@ export const footerLinks = [
     title: "Access",
     links: [
       {
-        name: "Sign Up",
-        link: "/register",
-      },
-      {
         name: "Sign in",
         link: "/login",
       },
