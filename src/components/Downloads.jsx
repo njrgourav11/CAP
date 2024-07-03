@@ -16,7 +16,7 @@ import doc2 from "../assets/downloads/Messages pocket book.docx";
 import doc3 from "../assets/downloads/Module 1 CAP lesson plan.docx";
 import doc4 from "../assets/downloads/Module 2 CAP lesson plan.docx";
 import doc5 from "../assets/downloads/module 3 leaflet (1).docx";
-import doc6 from "../assets/downloads/Module 3 CAP lesson plan.docx";
+import doc6 from "../assets/downloads/Module 3 CAP Lesson plan.docx";
 import doc7 from "../assets/downloads/Module 4 e-leaflet.docx";
 import doc8 from "../assets/downloads/Module 4 CAP lesson plan.docx";
 import doc9 from "../assets/downloads/NOTE ON FIRST ACTIVITY IN CYBER AMBASSADOR PLATFORM.docx";
