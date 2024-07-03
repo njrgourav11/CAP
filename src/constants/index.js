@@ -34,6 +34,10 @@ export const navLinks = [
     id: "contact",
     title: "Contact",
   },
+  {
+    id: "login",
+    title: "Login",
+  },
 ];
 
 export const objectives = [
@@ -254,10 +258,7 @@ export const footerLinks = [
   {
     title: "Access",
     links: [
-      {
-        name: "Sign Up",
-        link: "/register",
-      },
+      
       {
         name: "Sign in",
         link: "/login",

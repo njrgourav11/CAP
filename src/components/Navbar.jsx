@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import { close, menu, telangana, cap, st, she } from "../assets";
 import { navLinks } from "../constants";
+import { useAuth } from "./login/authContext";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
   const location = useLocation();
+  const { isLoggedIn, signOut } = useAuth(); // Get auth state and signOut function
+  const navigate = useNavigate(); // Initialize navigate function
 
   useEffect(() => {
     const currentPath =
@@ -20,6 +23,11 @@ const Navbar = () => {
   const handleNavItemClick = (title) => {
     setActive(title);
     setToggle(false);
+  };
+
+  const handleSignOut = () => {
+    signOut();
+    navigate("/");
   };
 
   return (
@@ -45,6 +53,19 @@ const Navbar = () => {
             <Link to={nav.id}>{nav.title}</Link>
           </li>
         ))}
+        {isLoggedIn && (
+          <>
+            <li className="font-poppins font-normal cursor-pointer text-[16px] text-white mr-10">
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+            <li
+              className="font-poppins font-normal cursor-pointer text-[16px] text-white"
+              onClick={handleSignOut}
+            >
+              Sign Out
+            </li>
+          </>
+        )}
       </ul>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -72,6 +93,26 @@ const Navbar = () => {
                 <Link to={nav.id}>{nav.title}</Link>
               </li>
             ))}
+            {isLoggedIn ? (
+              <>
+                <li className="font-poppins font-normal cursor-pointer text-[16px] text-white mb-4">
+                  <Link to="/dashboard">Dashboard</Link>
+                </li>
+                <li
+                  className="font-poppins font-normal cursor-pointer text-[16px] text-white mb-4"
+                  onClick={handleSignOut}
+                >
+                  Sign Out
+                </li>
+              </>
+            ) : (
+              <li
+                className="font-poppins font-normal cursor-pointer text-[16px] text-white mb-4"
+                onClick={() => handleNavItemClick("Login")}
+              >
+                <Link to="/login">Login</Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>

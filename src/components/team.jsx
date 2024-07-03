@@ -44,21 +44,22 @@ const Team = () => {
                 <div className="flex flex-row flex-wrap-reverse justify-center mt-8">
                     
                    
-                    
-                    <ProfileCard
-                        name="Sri. Shekar Reddy"
-                        role="(DSP), WSW"
-                        image={Sekhar}
+                <ProfileCard
+                        name="Sri. Mallanna"
+                        role="(SI), WSW"
+                        image={Mallana}
                     />
+                    
                     <ProfileCard
                         name="Smt. Mounika"
                         role="WSW"
                         image={Mam}
                     />
+                   
                     <ProfileCard
-                        name="Sri. Mallanna"
-                        role="(SI), WSW"
-                        image={Mallana}
+                        name="Sri. Shekar Reddy"
+                        role="(DSP), WSW"
+                        image={Sekhar}
                     />
                      <ProfileCard
                         name="Dr. Anuradha Tatta"
@@ -73,8 +74,8 @@ const Team = () => {
                     
                     
                     <ProfileCard
-                        name="Smt. Lakshmi"
-                        role="(ASP), WSW"
+                        name="Smt. Laxmi"
+                        role="(ADCP), WSW"
                         image={Lakshmi}
                     />
                     <ProfileCard

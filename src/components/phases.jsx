@@ -1,6 +1,6 @@
-import { phases } from "../constants";
-import styles from "../style";
-import FeedbackCard from "./FeedbackCard";
+import { phases } from "../constants"; // Ensure this path is correct
+import styles from "../style"; // Ensure this path is correct
+import FeedbackCard from "./FeedbackCard"; // Ensure this path is correct
 
 const Testimonials = () => (
   <section

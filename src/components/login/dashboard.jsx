@@ -3,14 +3,21 @@ import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "./firebase";
 import styles from "../../style";
-import Blog from "../../components/blog/blog";
 
 const Dashboard = () => {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
     await signOut(auth);
-    navigate("/login");
+    navigate("/");
+  };
+
+  const handlePostBlog = () => {
+    navigate("/post");
+  };
+
+  const handleDownloads = () => {
+    navigate("/downloads");
   };
 
   return (
@@ -21,8 +28,11 @@ const Dashboard = () => {
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
         Welcome to your dashboard. Manage your activities and stay updated with the latest information.
       </p>
-      <button className="mt-4 p-4 bg-red-600 text-white rounded-md" onClick={handleLogout}>Logout</button>
-    <Blog />
+      <div className="mt-4 flex space-x-4">
+        <button className="p-4 bg-red-600 text-white rounded-md" onClick={handleLogout}>Logout</button>
+        <button className="p-4 bg-blue-600 text-white rounded-md" onClick={handlePostBlog}>Post Blog</button>
+        <button className="p-4 bg-green-600 text-white rounded-md" onClick={handleDownloads}>Downloads</button>
+      </div>
     </section>
   );
 };
