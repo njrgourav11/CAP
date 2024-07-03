@@ -34,10 +34,7 @@ export const navLinks = [
     id: "contact",
     title: "Contact",
   },
-  {
-    id: "login",
-    title: "Login",
-  },
+  
 ];
 
 export const objectives = [

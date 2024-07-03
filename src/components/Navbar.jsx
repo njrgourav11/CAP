@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import { close, menu, telangana, cap, st, she } from "../assets";
 import { navLinks } from "../constants";
-import { useAuth } from "./login/authContext";
+import { useAuth } from "./login/authContext"; // Import the useAuth hook
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
@@ -53,7 +53,7 @@ const Navbar = () => {
             <Link to={nav.id}>{nav.title}</Link>
           </li>
         ))}
-        {isLoggedIn && (
+        {isLoggedIn ? (
           <>
             <li className="font-poppins font-normal cursor-pointer text-[16px] text-white mr-10">
               <Link to="/dashboard">Dashboard</Link>
@@ -65,6 +65,10 @@ const Navbar = () => {
               Sign Out
             </li>
           </>
+        ) : (
+          <li className="font-poppins font-normal cursor-pointer text-[16px] text-white">
+            <Link to="/login">Login</Link>
+          </li>
         )}
       </ul>
 
