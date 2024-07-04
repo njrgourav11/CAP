@@ -21,12 +21,14 @@ import img19 from '../assets/gal/19.jpg';
 import img20 from '../assets/gal/20.jpg';
 import img21 from '../assets/gal/21.jpg';
 import img22 from '../assets/gal/22.jpg';
+import img23 from '../assets/gal/23.jpeg';
+import img24 from '../assets/gal/24.jpeg';
 
 const Gallery1 = () => {
   // Array of image imports
   const images = [
     img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13,
-    img14, img15, img16, img17, img18, img19, img20, img21, img22
+    img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24
   ];
 
 
